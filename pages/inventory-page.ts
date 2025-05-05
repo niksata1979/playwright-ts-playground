@@ -22,6 +22,7 @@ export class InventoryPage{
     async clickCartIcon() {
         await this.shoppingCartLink.click();
     }
+
 }
     
 
