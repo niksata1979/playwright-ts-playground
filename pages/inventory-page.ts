@@ -27,6 +27,10 @@ export class InventoryPage{
         await expect(this.shoppingCartBadge).toHaveText(qty);
     }
 
+    async checkShoppingCartBadgeIsNotVisible() {
+        await expect(this.shoppingCartBadge).not.toBeVisible();
+    }
+
     async removeFromCart() {
         await this.removeFromCartButton.click();
     }

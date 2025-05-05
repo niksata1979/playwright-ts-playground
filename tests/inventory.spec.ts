@@ -31,6 +31,6 @@ test ('Remove product from basket from Inventory page', async () => {
     await inventoryPage.addToBagBackpack();
     await inventoryPage.checkShoppingCartBadge('1');
     await inventoryPage.removeFromCart();
-    await inventoryPage.checkShoppingCartBadge('0');
+    await inventoryPage.checkShoppingCartBadgeIsNotVisible();
 
 }); 
