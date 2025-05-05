@@ -23,3 +23,14 @@ test ('Add backpack to basket', async () => {
     await cartPage.assertItemQuantity('1');
     await cartPage.assertItemPrice('$29.99');
 });
+
+test ('Remove product from basket from Inventory page', async () => {
+    await loginPage.openLoginPage();
+    await loginPage.successfullLogin();
+    await loginPage.assertInventoryPageUrl(/.*inventory.html/)
+    await inventoryPage.addToBagBackpack();
+    await inventoryPage.checkShoppingCartBadge('1');
+    await inventoryPage.removeFromCart();
+    await inventoryPage.checkShoppingCartBadge('0');
+
+}); 
