@@ -22,6 +22,10 @@ test ('Checkout', async () => {
     await inventoryPage.addToBagBackpack();
     await inventoryPage.clickCartIcon();
     await cartPage.clickCheckoutButton();
-    await checkoutPage.assertCheckoutPageStep1Url(/.*checkout-step-one.html/)
+    await checkoutPage.assertCheckoutPageStep1Url(/.*checkout-step-one.html/);
     await checkoutPage.submitDeliveryDetails();
+    await checkoutPage.assertCheckoutPageStep1Url(/.*checkout-step-two.html/)
+    await checkoutPage.clickFinishCheckout();
+    await checkoutPage.assertCheckoutPageStep1Url(/.*checkout-complete.html/)
+
 });

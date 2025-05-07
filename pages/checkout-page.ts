@@ -6,7 +6,8 @@ export class CheckoutPage{
     readonly firstName: Locator;
     readonly lastName: Locator;
     readonly zipCode: Locator;
-    readonly continueToCheckoutButton
+    readonly continueToCheckoutButton: Locator;
+    readonly finishCheckoutButton: Locator;
 
     //constructor
     constructor (page: Page) {
@@ -15,6 +16,7 @@ export class CheckoutPage{
         this.lastName = page.locator('[data-test="lastName"]');
         this.zipCode = page.locator('[data-test="postalCode"]');
         this.continueToCheckoutButton = page.locator('[data-test="continue"]');
+        this.finishCheckoutButton = page.locator('[data-test="finish"]')
 
     }
 
@@ -30,6 +32,10 @@ export class CheckoutPage{
         await this.zipCode.fill('1234');
         await this.continueToCheckoutButton.click(); 
     };
+
+    async clickFinishCheckout() {
+        await this.finishCheckoutButton.click();
+    }
 
 }
     
